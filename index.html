@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapleVille Consolidation Portal</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="MapleVille Logo" class="logo">
+        </div>
+        
+        <h1>Consolidation Portal</h1>
+        <p class="subtitle">Your Tools All In One Place</p>
+
+        <div class="controls-container">
+            <input type="text" id="toolSearch" placeholder="Search tools...">
+            <button id="toggleEditMode">
+                <span id="editIcon">⚙️</span> Settings
+            </button>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+        <aside class="side-panel left-panel">
+            <section class="info-section">
+                <h2>Our Goals</h2>
+                <textarea id="ourGoals" placeholder="Type team goals and objectives here..."></textarea>
+            </section>
+            
+            <section class="info-section">
+                <h2>Extensions</h2>
+                <textarea id="extensions" placeholder="Type useful browser extensions or internal notes here..."></textarea>
+            </section>
+        </aside>
+
+        <main id="toolSections">
+            
+            <section class="tool-category" data-max-tools="5" id="communication">
+                <h2>Communication</h2>
+                <div class="tool-links">
+                    <a href="https://mail.google.com/" target="_blank" data-label="Gmail">Gmail</a>
+                    <a href="https://calendar.google.com/" target="_blank" data-label="Google Calendar">Google Calendar</a>
+                </div>
+                <button class="add-tool-button" data-category="communication">+ Add Tool</button>
+            </section>
+
+            <section class="tool-category" data-max-tools="5" id="projects">
+                <h2>Projects</h2>
+                <div class="tool-links">
+                    <a href="https://monday.com/" target="_blank" data-label="Monday.com">Monday.com</a>
+                </div>
+                <button class="add-tool-button" data-category="projects">+ Add Tool</button>
+            </section>
+
+            <section class="tool-category" data-max-tools="5" id="payments">
+                <h2>Payments</h2>
+                <div class="tool-links">
+                    <a href="https://www.clover.com/" target="_blank" data-label="Clover.com">Clover.com</a>
+                </div>
+                <button class="add-tool-button" data-category="payments">+ Add Tool</button>
+            </section>
+
+            <section class="tool-category" data-max-tools="5" id="files">
+                <h2>Files</h2>
+                <div class="tool-links">
+                    <a href="https://onedrive.live.com/" target="_blank" data-label="OneDrive Live">OneDrive Live</a>
+                </div>
+                <button class="add-tool-button" data-category="files">+ Add Tool</button>
+            </section>
+
+            <section class="tool-category" data-max-tools="5" id="productivity">
+                <h2>Productivity</h2>
+                <div class="tool-links">
+                    <a href="https://docs.google.com/spreadsheets/" target="_blank" data-label="Google Sheets">Google Sheets</a>
+                </div>
+                <button class="add-tool-button" data-category="productivity">+ Add Tool</button>
+            </section>
+            
+            <section class="tool-category" data-max-tools="5" id="social-media">
+                <h2>Social Media</h2>
+                <div class="tool-links">
+                    <a href="https://www.instagram.com/" target="_blank" data-label="Instagram">Instagram</a>
+                    <a href="https://www.facebook.com/" target="_blank" data-label="Facebook">Facebook</a>
+                    <a href="https://www.tiktok.com/" target="_blank" data-label="TikTok">TikTok</a>
+                </div>
+                <button class="add-tool-button" data-category="social-media">+ Add Tool</button>
+            </section>
+
+            <section class="tool-category" data-max-tools="5" id="other-tools">
+                <h2>Other Tools</h2>
+                <div class="tool-links">
+                    <a href="#" target="_blank" data-label="Tool 1">Tool 1</a>
+                    <a href="#" target="_blank" data-label="Tool 2">Tool 2</a>
+                </div>
+                <button class="add-tool-button" data-category="other-tools">+ Add Tool</button>
+            </section>
+        </main>
+
+        <aside class="side-panel right-panel">
+            <section class="info-section">
+                <h2>Announcements</h2>
+                <textarea id="announcements" placeholder="Type important announcements or reminders here..."></textarea>
+            </section>
+             
+            <section class="info-section">
+                <h2>Reminders</h2>
+                <textarea id="reminders" placeholder="Type quick, actionable reminders here..."></textarea>
+            </section>
+            
+        </aside>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Edit Tool URL</h3>
+            
+            <label for="modalToolName">Tool Name:</label>
+            <input type="text" id="modalToolName" readonly>
+            
+            <label for="modalToolURL">New URL:</label>
+            <input type="url" id="modalToolURL" placeholder="https://">
+            
+            <button id="saveUrlButton">Save Changes</button>
+        </div>
+    </div>
+    
+    <div id="addToolModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button add-close-button">&times;</span>
+            <h3>Add New Tool</h3>
+            
+            <label for="addToolName">Tool Name (Label):</label>
+            <input type="text" id="addToolName" placeholder="e.g., Jira, Trello">
+            
+            <label for="addToolURL">Tool URL:</label>
+            <input type="url" id="addToolURL" placeholder="https://">
+            
+            <button id="addNewToolButton">Add Tool</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
